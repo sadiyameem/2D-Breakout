@@ -11,6 +11,12 @@ let currentPosition = userStart
 const ballStart = [270, 40]
 let ballCurrentPosition = ballStart
 
+// my block
+class Block {
+    constructor(_xAxis, _yAxis) {
+    }
+}
+
 // add user
 const user = document.createElement('div')
 user.classList.add('user')
