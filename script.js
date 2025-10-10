@@ -5,7 +5,7 @@ const blockHeight = 20
 const boardWidth = 560
 const boardHeight = 300
 
-const useStart = [230, 10]
+const userStart = [230, 10]
 let currentPosition = userStart
 
 const ballStart = [270, 40]
@@ -15,11 +15,13 @@ let ballCurrentPosition = ballStart
 const user = document.createElement('div')
 user.classList.add('user')
 grid.appendChild(user)
+drawUser()
 
 //add ball
 const ball = document.createElement('div')
 ball.classList.add('ball')
 grid.appendChild(ball)
+drawBall()
 
 // function of user
 function drawUser() {
