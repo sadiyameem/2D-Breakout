@@ -6,3 +6,9 @@
     margin-top: 100px;
 }
 
+.user {
+    position: absolute;
+    width: 100px;
+    height: 20px;
+    background-color: blue;
+}
