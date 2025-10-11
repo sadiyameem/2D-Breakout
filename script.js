@@ -14,6 +14,10 @@ let ballCurrentPosition = ballStart
 // my block
 class Block {
     constructor(_xAxis, _yAxis) {
+        this.bottomLeft = [_xAxis, _yAxis]
+        this.bottomRight = [_xAxis + blockWidth, _yAxis]
+        this.topRight = [_xAxis, _yAxis + blockHeight]
+        this.topLeft = [_xAxis, _yAxis + blockHeight]
     }
 }
 
