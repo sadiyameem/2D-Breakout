@@ -141,4 +141,13 @@ function checkForCollision() {
 }
 
 //check for user collision
+if (
+    ballCurrentPosition[0] > currentPosition[0] &&
+    ballCurrentPosition[0] < currentPosition[0] + blockWidth &&
+    (ballCurrentPosition[1] > currentPosition[1] && ballCurrentPosition[1] < currentPosition[1] + blockHeight)
+) {
+    //changeDirection()
+}
+
+//game over
 }
