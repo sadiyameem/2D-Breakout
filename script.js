@@ -22,7 +22,7 @@ class Block {
 }
 
 // all my blocks
-const block = [
+const blocks = [
     new Block(10, 270),
     new Block(120, 270),
     new Block(230, 270),
@@ -41,6 +41,17 @@ const block = [
 ]
 
 // draw my blocks
+function addBlocks() {
+  for (let i = 0; i < blocks.length; i++) {
+    const block = document.createElement('div')
+    block.classList.add('block')
+    block.style.left = blocks[i].bottomLeft[0] + 'px'
+    block.style.bottom = blocks[i].bottomLeft[1] + 'px'
+    grid.appendChild(blockElement)
+  }
+}
+addBlocks()
+
 
 // add user
 const user = document.createElement('div')
@@ -65,3 +76,4 @@ function drawBall() {
     ball.style.left = ballCurrentPosition[0] + 'px'
     ball.style.bottom = ballCurrentPosition[1] + 'px'
 }
+
