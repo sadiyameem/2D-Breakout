@@ -2,6 +2,7 @@ const grid = document.querySelector('.grid')
 const scoreDisplay = document.querySelector('#score')
 const blockWidth = 100
 const blockHeight = 20
+const ballDiameter = 20
 const boardWidth = 560
 const boardHeight = 300
 let xDirection = -2
@@ -109,3 +110,27 @@ function moveBall() {
     checkForCollision()
 }
 timerId = setInterval(moveBall, 30)
+
+// check for collision
+function checkForCollision() {
+    //check for block collision
+    for (let i = 0; i < blocks.length; i++) {
+        if (ballCurrentPosition[0] > blocks[i].bottomLeft[0] &&
+            ballCurrentPosition[0] < blocks[1].bottomRight[0] &&
+            (ballCurrentPosition[1] + ballDiameter) > blocks[i].bottomLeft[1] &&
+            ballCurrentPosition[1] < blocks[1].topLeft[1]
+        ) {
+            const allBlocks = document.querySelectorAll('.block')
+            allBlocks[i].classList.remove('block')
+            blocks.splice(i, 1)
+            score++
+            scoreDisplay.innerHTML = score
+            if (blocks.length == 0) {
+                scoreDisplay.innerHTML = 'You Win!'
+                clearInterval(timerId)
+                document.removeEventListener('keydown', moveUser)
+            }
+        }
+    }
+    // check for wall hits
+}
