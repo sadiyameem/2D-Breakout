@@ -133,4 +133,12 @@ function checkForCollision() {
         }
     }
     // check for wall hits
+    if (ballCurrentPosition[0] >= (boardWidth - ballDiameter) ||
+        ballCurrentPosition[0] <= 0 ||
+        ballCurrentPosition[1] >= (boardHeight - ballDiameter)
+) {
+    // changeDirection()
+}
+
+//check for user collision
 }
