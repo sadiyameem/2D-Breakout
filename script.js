@@ -22,7 +22,7 @@ class Block {
     constructor(_xAxis, _yAxis) {
         this.bottomLeft = [_xAxis, _yAxis]
         this.bottomRight = [_xAxis + blockWidth, _yAxis]
-        this.topRight = [_xAxis, _yAxis + blockHeight]
+        this.topRight = [_xAxis + blockWidth, _yAxis + blockHeight]
         this.topLeft = [_xAxis, _yAxis + blockHeight]
     }
 }
@@ -53,7 +53,7 @@ function addBlocks() {
     block.classList.add('block')
     block.style.left = blocks[i].bottomLeft[0] + 'px'
     block.style.bottom = blocks[i].bottomLeft[1] + 'px'
-    grid.appendChild(blockElement)
+    grid.appendChild(block)
   }
 }
 addBlocks()
@@ -84,11 +84,11 @@ function drawBall() {
 }
 
 // move user
-function moveUser() {
+function moveUser(e) {
     switch(e.key) {
         case 'ArrowLeft':
             if (currentPosition[0] > 0) {
-                curentPosition[0] -= 10
+                currentPosition[0] -= 10
                 drawUser()
             }
             break
@@ -116,9 +116,9 @@ function checkForCollision() {
     //check for block collision
     for (let i = 0; i < blocks.length; i++) {
         if (ballCurrentPosition[0] > blocks[i].bottomLeft[0] &&
-            ballCurrentPosition[0] < blocks[1].bottomRight[0] &&
+            ballCurrentPosition[0] < blocks[i].bottomRight[0] &&
             (ballCurrentPosition[1] + ballDiameter) > blocks[i].bottomLeft[1] &&
-            ballCurrentPosition[1] < blocks[1].topLeft[1]
+            ballCurrentPosition[1] < blocks[i].topLeft[1]
         ) {
             const allBlocks = document.querySelectorAll('.block')
             allBlocks[i].classList.remove('block')
@@ -153,25 +153,25 @@ if (
 if (ballCurrentPosition[1] <= 0) {
     clearInterval(timerId)
     scoreDisplay.innerHTML = 'You Lose!'
-    document.removeEventListener('keydown, moverUser')
+    document.removeEventListener('keydown', moveUser)
 }
 }
 
 // adding change direction
 function changeDirection() {
-    if (xDirection == 2 & yDirection === 2) {
+    if (xDirection == 2 && yDirection === 2) {
         yDirection = -2
         return
     }
-    if (xDirection == 2 & yDirection === -2) {
+    if (xDirection == 2 && yDirection === -2) {
         xDirection = -2
         return
     }
-    if (xDirection == -2 & yDirection === -2) {
+    if (xDirection == -2 && yDirection === -2) {
         yDirection = 2
         return
     }
-    if (xDirection == -2 & yDirection === 2) {
+    if (xDirection == -2 && yDirection === 2) {
         xDirection = 2
         return
     }
