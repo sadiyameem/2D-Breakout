@@ -77,3 +77,21 @@ function drawBall() {
     ball.style.bottom = ballCurrentPosition[1] + 'px'
 }
 
+// move user
+function moveUser() {
+    switch(e.key) {
+        case 'ArrowLeft':
+            if (currentPosition[0] > 0) {
+                curentPosition[0] -= 10
+                drawUser()
+            }
+            break
+            case 'ArrowRight':
+                if ((currentPosition[0] < boardWidth - blockWidth)) {
+                    currentPosition[0] += 10
+                    drawUser()
+                }
+                break
+    }
+}
+document.addEventListener('keydown', moveUser)
