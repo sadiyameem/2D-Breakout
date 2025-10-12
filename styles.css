@@ -4,21 +4,21 @@
     height: 300px;
     border: 2px solid black;
     margin: 100px auto;
-    background-color: lightgray;
+    background-image: url('galaxy.jpg');
 }
 
 .user {
     position: absolute;
     width: 100px;
     height: 20px;
-    background-color: blue;
+    background-color: blueviolet;
 }
 
 .block {
     position: absolute;
     width: 100px;
     height: 20px;
-    background-color: blue;
+    background-color: cyan;
 }
 
 .ball {
@@ -26,5 +26,5 @@
     width: 20px;
     height: 20px;
     border-radius: 10px;
-    background-color: red;
+    background-color: white;
 }
