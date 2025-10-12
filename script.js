@@ -150,4 +150,9 @@ if (
 }
 
 //game over
+if (ballCurrentPosition[1] <= 0) {
+    clearInterval(timerId)
+    scoreDisplay.innerHTML = 'You Lose!'
+    document.removeEventListener('keydown, moverUser')
+}
 }
