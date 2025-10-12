@@ -137,7 +137,7 @@ function checkForCollision() {
         ballCurrentPosition[0] <= 0 ||
         ballCurrentPosition[1] >= (boardHeight - ballDiameter)
 ) {
-    // changeDirection()
+    changeDirection()
 }
 
 //check for user collision
@@ -146,7 +146,7 @@ if (
     ballCurrentPosition[0] < currentPosition[0] + blockWidth &&
     (ballCurrentPosition[1] > currentPosition[1] && ballCurrentPosition[1] < currentPosition[1] + blockHeight)
 ) {
-    //changeDirection()
+    changeDirection()
 }
 
 //game over
@@ -155,4 +155,24 @@ if (ballCurrentPosition[1] <= 0) {
     scoreDisplay.innerHTML = 'You Lose!'
     document.removeEventListener('keydown, moverUser')
 }
+}
+
+// adding change direction
+function changeDirection() {
+    if (xDirection == 2 & yDirection === 2) {
+        yDirection = -2
+        return
+    }
+    if (xDirection == 2 & yDirection === -2) {
+        xDirection = -2
+        return
+    }
+    if (xDirection == -2 & yDirection === -2) {
+        yDirection = 2
+        return
+    }
+    if (xDirection == -2 & yDirection === 2) {
+        xDirection = 2
+        return
+    }
 }
