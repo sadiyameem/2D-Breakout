@@ -1,5 +1,6 @@
 const grid = document.querySelector('.grid')
 const scoreDisplay = document.querySelector('#score')
+const startBtn = document.querySelector('#start-btn')
 const blockWidth = 100
 const blockHeight = 20
 const ballDiameter = 20
@@ -109,7 +110,6 @@ function moveBall() {
     drawBall()
     checkForCollision()
 }
-timerId = setInterval(moveBall, 30)
 
 // check for collision
 function checkForCollision() {
@@ -176,3 +176,11 @@ function changeDirection() {
         return
     }
 }
+
+// start button
+startBtn.addEventListener('click', () => {
+    clearInterval(timerId)
+    resetGame()
+    timerId = setInterval(moveBall, 30)
+    startBtn.textContent = 'Restart Game'
+})
