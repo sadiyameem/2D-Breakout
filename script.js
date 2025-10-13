@@ -184,3 +184,9 @@ startBtn.addEventListener('click', () => {
     timerId = setInterval(moveBall, 30)
     startBtn.textContent = 'Restart Game'
 })
+
+// reset game
+function resetGame() {
+    score = 0
+    scoreDisplay.textContent = score
+}
