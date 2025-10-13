@@ -1,14 +1,15 @@
 const grid = document.querySelector('.grid')
 const scoreDisplay = document.querySelector('#score')
 const startBtn = document.querySelector('#start-btn')
+
 const blockWidth = 100
 const blockHeight = 20
 const ballDiameter = 20
 const boardWidth = 560
 const boardHeight = 300
+
 let xDirection = -2
 let yDirection = 2
-
 let timerId
 let score = 0
 
