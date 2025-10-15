@@ -17,5 +17,10 @@ If the ball touches the edge the player loses and it's game over.
 I wanted to create this game because I remember playing this game when I was younger and loved playing it so making this was so fun and nostalgic for me.
 
 # Challenges
--
+- Getting the start button to work
+
+# Learned
+- How to detect collision
+
+Created by Sadiya
 
