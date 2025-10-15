@@ -20,5 +20,8 @@ I wanted to create this game because I remember playing this game when I was you
 - Getting the start button to work
 - How to detect collision
 
+
+[![Athena Award Badge](https://img.shields.io/endpoint?url=https%3A%2F%2Faward.athena.hackclub.com%2Fapi%2Fbadge)](https://award.athena.hackclub.com?utm_source=readme)
+
 Created by Sadiya
 
